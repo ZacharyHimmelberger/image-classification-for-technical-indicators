@@ -20,6 +20,10 @@ Naftali Cohen, Tucker Balch, & Manuela Veloso. [Trading via Image Classification
 <img src="sample_candle_plot.jpg" alt="drawing" width="300"/>
 <img src="sample_line_plot.jpg" alt="drawing" width="300"/>
 
+5. We created a pandas DataFrame that contained the pixel data for the grey-scaled images. We did this separately for the line plots and the candle plots.
+
+6. We used [H2O.ai](https://www.h2o.ai) to develop machine learning algorithms. The images were classified as buy or no-buy. The model performance is evaluated and discussed.
+
 # Prerequisites
 
 -  [Alpaca account](https://app.alpaca.markets/signup)
