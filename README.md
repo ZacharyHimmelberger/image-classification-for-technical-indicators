@@ -17,8 +17,8 @@ Naftali Cohen, Tucker Balch, & Manuela Veloso. [Trading via Image Classification
 
 4. We created a line plot and candle stick plot for each of the randomly sampled signals. Here are some example plots (note: these examples re-sized for illustrative purposes). 
 
-<img src="/workspaces/image-classification-for-technical-indicators/sample_candle_plot.jpg" alt="drawing" width="300"/>
-<img src="/workspaces/image-classification-for-technical-indicators/sample_line_plot.jpg" alt="drawing" width="300"/>
+<img src="sample_candle_plot.jpg" alt="drawing" width="300"/>
+<img src="sample_line_plot.jpg" alt="drawing" width="300"/>
 
 # Prerequisites
 
