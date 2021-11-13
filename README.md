@@ -34,4 +34,4 @@ Naftali Cohen, Tucker Balch, & Manuela Veloso. [Trading via Image Classification
 
 To run this project, you will need to have an Alpaca account. Alpaca has eligibility requirements that are detailed [here](https://alpaca.markets/support/requirements-alpaca-brokerage-account/).
 
-We developed the project using VS code and docker. These requirements ensure that you can replicate our work. However, the code can be easily modified to run on any set-up.
+We developed the project using VS code and docker. These requirements ensure that you can replicate our work. However, the code can be easily modified to run on other systems.
