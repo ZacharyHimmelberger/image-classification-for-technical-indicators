@@ -36,8 +36,8 @@ We developed the project using VS code and docker. These requirements ensure tha
 
 Our work can be reproduced by running the notebooks. Because of the amount of data, you can run a smaller version of the project in step 1. Both notebooks are linked below.
 
-1. [Upload Plots](notebooks/00_upload_plots.ipynb)
+1a. [Upload Plots](notebooks/00_upload_plots.ipynb)
 
-1. [Upload Plots (minimal example)](notebooks/00_upload_plots_minimal_example.ipynb)
+1b. [Upload Plots (minimal example)](notebooks/00_upload_plots_minimal_example.ipynb)
 
 2. Coming Soon!
