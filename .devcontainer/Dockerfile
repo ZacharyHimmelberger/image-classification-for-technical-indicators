@@ -29,7 +29,7 @@ RUN pip install alpaca_trade_api==1.4.0 \
     pandas_ta==0.3.14b0 \
     pyarrow==5.0.0 \
     pytest==6.2.5 \
-    pytest-cov
+    pytest-cov==3.0.0
 
 
 # from https://docs.h2o.ai/h2o/latest-stable/h2o-py/docs/intro.html#installing-h2o-3
