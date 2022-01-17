@@ -20,16 +20,16 @@ RUN if [ "${NODE_VERSION}" != "none" ]; then su vscode -c "umask 0002 && . /usr/
 # [Optional] Uncomment this line to install global node packages.
 # RUN su vscode -c "source /usr/local/share/nvm/nvm.sh && npm install -g <your-package-here>" 2>&1
 
-RUN pip install alpaca_trade_api \
-    boto3 \
-    jupyterlab \
-    mplfinance \
-    numpy \
-    pandas \
-    pandas_ta \
-    pyarrow \
-    pytest \
-    pytest-cov
+RUN pip install alpaca_trade_api==1.4.0 \
+    boto3==1.19.0 \
+    jupyterlab==3.2.1 \
+    mplfinance==0.12.7a17 \
+    numpy==1.21.3 \
+    pandas==1.3.4 \
+    pandas_ta==0.3.14b0 \
+    pyarrow==5.0.0 \
+    pytest==6.2.5 \
+    pytest-cov==3.0.0
 
 
 # from https://docs.h2o.ai/h2o/latest-stable/h2o-py/docs/intro.html#installing-h2o-3
