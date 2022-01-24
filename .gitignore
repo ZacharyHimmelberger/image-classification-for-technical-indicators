@@ -178,6 +178,3 @@ vignettes/*.pdf
 my_nb.ipynb
 historical_data.csv
 *.gzip
-
-# ignore plots folder
-plots
