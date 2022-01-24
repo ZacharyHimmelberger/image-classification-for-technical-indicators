@@ -197,7 +197,7 @@ def clear_files(dir_path):
         dir_path (str): The directory to delete the files.
     """
     p = Path(dir_path)
-    [f.unlink() for f in p.glob("*") if f.is_file()] 
+    [f.unlink() for f in p.glob("[!.]*") if f.is_file()] 
 
 
 def build_h2o_del_dir(dir_path, save_path, clear_dir=False):
