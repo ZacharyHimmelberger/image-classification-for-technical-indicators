@@ -57,6 +57,7 @@ def sample_signals(data, col_name, value, n, new_col_name, random_state=None):
 
     return data
 
+
 def sample_signals_fast(data, col_name, value, n, new_col_name, random_state=None):
     """Adds a column to a pandas DataFrame that contains a True value for randomly sampled
         values in a specified column.
@@ -75,14 +76,15 @@ def sample_signals_fast(data, col_name, value, n, new_col_name, random_state=Non
     # figure out which rows to sample from
     population_idx = data[col_name] == value
     population_df = data[population_idx]
-    
-    sample_df = population_df.sample(n = n, random_state = random_state)
+
+    sample_df = population_df.sample(n=n, random_state=random_state)
 
     # build the column to indicate which rows has been sampled
     data["sampled"] = False
     data.loc[sample_df.index, new_col_name] = True
 
     return data
+
 
 def sample_groups(data, group_name, col_name, value, n, new_col_name, random_state=None):
     """Applies a a pandas groupby() function to the sample_signals() function.  
