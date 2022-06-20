@@ -14,13 +14,11 @@ def parquet_to_h2o(*args):
     """Reads multiple parquet files and converts them to a single h2o dataframe.
 
     Args:
-        *args (str): Parquet files to be read.
+        *args (list of str): Parquet file paths to be read.
 
     Returns:
         h2o_frame (h2o.frame.H2OFrame): An h2o dataframe containing each of the parquet files.
     """
-    h2o.init()
-
     list_of_dfs = []
 
     for file in args:
@@ -46,20 +44,18 @@ def prepare_h2o_df(df, outcome, to_factor=True):
         tuple: A tuple with two elements. The first is the name of the outcome variable and the second is a list of 
         predictor variables.
     """
-    h2o.init()
-
     if to_factor:
         df[outcome].asfactor()
-    
+
     y = outcome
     x = df.columns.remove(y)
-    
+
     return (y, x)
 
 
 def train_and_save(df, outcome, predictors, save_path, max_models=100, max_runtime_min=5):
     """Trains and saves an h2o model using H2OAutoML.
-    
+
     Args:
         df (h2o.frame.H2OFrame): The data used to train the model.
         outcome (str): Name of the outcome variable. 
@@ -68,8 +64,6 @@ def train_and_save(df, outcome, predictors, save_path, max_models=100, max_runti
         max_models (int): Maximum number of models to create. Defaults to 100.
         max_runtime_secs (int): Maximum run time in minutes. Defaults to 5.
     """
-    h2o.init()
-
     aml = H2OAutoML(max_models=max_models, max_runtime_secs=60*max_runtime_min)
     aml.train(x=predictors, y=outcome, training_frame=df)
 
