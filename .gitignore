@@ -175,6 +175,5 @@ vignettes/*.pdf
 .DS_Store
 
 # Files that shouldn't be tracked
-my_nb.ipynb
 historical_data.csv
-*.gzip
+/data/*.gzip
