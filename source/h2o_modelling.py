@@ -41,16 +41,18 @@ def prepare_h2o_df(df, outcome, to_factor=True):
                             Defaults to True. 
 
     Returns:
-        tuple: A tuple with two elements. The first is the name of the outcome variable and the second is a list of 
-        predictor variables.
+        tuple: A tuple with three elements: the h2o data frame, the name of the outcome variable, 
+        and the second is a list of predictor variables.
     """
     if to_factor:
         df[outcome] = df[outcome].asfactor()
 
     y = outcome
-    x = df.columns.remove(y)
+    x = df.columns
+    x.remove('label')
+    x.remove('name')
 
-    return (y, x)
+    return (df, y, x)
 
 
 def train_and_save(df, outcome, predictors, save_path, max_models=100, max_runtime_min=5):
