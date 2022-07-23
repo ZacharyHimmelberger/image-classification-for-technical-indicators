@@ -45,7 +45,7 @@ def prepare_h2o_df(df, outcome, to_factor=True):
         predictor variables.
     """
     if to_factor:
-        df[outcome].asfactor()
+        df[outcome] = df[outcome].asfactor()
 
     y = outcome
     x = df.columns.remove(y)
