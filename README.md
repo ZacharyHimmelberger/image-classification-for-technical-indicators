@@ -23,6 +23,8 @@ Naftali Cohen, Tucker Balch, & Manuela Veloso. [Trading via Image Classification
 
 6. We used [H2O.ai](https://www.h2o.ai) to develop machine learning algorithms. The images were classified as buy or no-buy. The model performance is evaluated and discussed.
 
+- note: We excluded deep learning models from our list of learning algorithms. We made this decision because h2o does not use the full test sample to evaluate deep learning models. This default behavior cannot be changed when using the `H2OAutoML` function. 
+
 # Run Project
 
 ## Prerequisites
