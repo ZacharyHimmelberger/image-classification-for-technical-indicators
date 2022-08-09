@@ -20,7 +20,7 @@ RUN if [ "${NODE_VERSION}" != "none" ]; then su vscode -c "umask 0002 && . /usr/
 # [Optional] Uncomment this line to install global node packages.
 # RUN su vscode -c "source /usr/local/share/nvm/nvm.sh && npm install -g <your-package-here>" 2>&1
 
-RUN pip install alpaca_trade_api==1.4.0 \
+RUN pip install alpaca_trade_api==2.3.0 \
     boto3==1.19.0 \
     jupyterlab==3.2.1 \
     mplfinance==0.12.7a17 \
