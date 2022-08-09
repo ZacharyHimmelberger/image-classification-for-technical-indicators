@@ -41,20 +41,22 @@ def prepare_h2o_df(df, outcome, to_factor=True):
                             Defaults to True. 
 
     Returns:
-        tuple: A tuple with two elements. The first is the name of the outcome variable and the second is a list of 
-        predictor variables.
+        tuple: A tuple with three elements: the h2o data frame, the name of the outcome variable, 
+        and the second is a list of predictor variables.
     """
     if to_factor:
-        df[outcome].asfactor()
+        df[outcome] = df[outcome].asfactor()
 
     y = outcome
-    x = df.columns.remove(y)
+    x = df.columns
+    x.remove('label')
+    x.remove('name')
 
-    return (y, x)
+    return (df, y, x)
 
 
-def train_and_save(df, outcome, predictors, save_path, max_models=100, max_runtime_min=5):
-    """Trains and saves an h2o model using H2OAutoML.
+def train_and_save(df, outcome, predictors, save_path, max_models=100, max_runtime_min=5, seed=1):
+    """Trains and saves an h2o model using H2OAutoML. Excludes deep learning models (see README for more detail.)
 
     Args:
         df (h2o.frame.H2OFrame): The data used to train the model.
@@ -64,7 +66,11 @@ def train_and_save(df, outcome, predictors, save_path, max_models=100, max_runti
         max_models (int): Maximum number of models to create. Defaults to 100.
         max_runtime_secs (int): Maximum run time in minutes. Defaults to 5.
     """
-    aml = H2OAutoML(max_models=max_models, max_runtime_secs=60*max_runtime_min)
+    aml = H2OAutoML(
+        max_models=max_models, 
+        max_runtime_secs=60*max_runtime_min, 
+        seed=seed,
+        exclude_algos=["DeepLearning"])
     aml.train(x=predictors, y=outcome, training_frame=df)
 
     SAVE_PATH = save_path
