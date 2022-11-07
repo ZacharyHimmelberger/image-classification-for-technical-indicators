@@ -22,6 +22,7 @@ RUN if [ "${NODE_VERSION}" != "none" ]; then su vscode -c "umask 0002 && . /usr/
 
 RUN pip install alpaca_trade_api==2.3.0 \
     boto3==1.19.0 \
+    gdown==4.5.1 #
     jupyterlab==3.2.1 \
     mplfinance==0.12.7a17 \
     numpy==1.21.3 \
