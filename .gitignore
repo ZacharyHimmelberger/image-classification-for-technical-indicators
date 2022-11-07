@@ -177,3 +177,4 @@ vignettes/*.pdf
 # Files that shouldn't be tracked
 historical_data.csv
 /data/*.gzip
+models
