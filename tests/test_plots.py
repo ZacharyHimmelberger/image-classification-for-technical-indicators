@@ -39,6 +39,17 @@ def test_sample_signals():
     
     pd.testing.assert_frame_equal(expected_output, actual_output)
 
+def test_sample_signals_fast():
+    test_df = pd.DataFrame({'buy_signal':[np.NaN, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0]})
+    test_col_name = 'buy_signal'
+    test_value = 1.0
+    test_n = 2
+    test_new_col_name = 'sampled'
+
+    expected_output = pd.DataFrame({'buy_signal':[np.NaN, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0], 'sampled':[False, False, True, True, False, False, False]})
+    actual_output = plots.sample_signals_fast(test_df, test_col_name, test_value, test_n, test_new_col_name)
+    
+    pd.testing.assert_frame_equal(expected_output, actual_output)
 
 def test_sample_groups():
     test_df = pd.DataFrame({'firm':['AAPL','AAPL','AAPL','GOOG','GOOG','GOOG'], 'buy_signal':[1,0,0,1,0,0]})
